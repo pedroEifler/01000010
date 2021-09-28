@@ -13,5 +13,7 @@ public class BinarioBootApplication {
         System.out.println("");
 
         Conversores.decimalParaBinário(valorEmDecimal);
+        Conversores.decimalParaOctal(valorEmDecimal);
+        Conversores.decimalParaHexadecimal(valorEmDecimal);
     }
 }
