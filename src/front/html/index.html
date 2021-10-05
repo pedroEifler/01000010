@@ -17,22 +17,25 @@
                         <small>Digite os valores que deseja calcular</small>
                         <div class="input-group">
                             <input type="text" class="form-control" id="inputValorEsquerdo" placeholder="EX: 100101">
-                            <select id="seletor" class="form-select">
-                                <option id="subtracao" value="1">+</option>
-                                <option id="adicao" value="2">+</option>
-                                <option id="multiplicacao" value="3">x</option>
+                            <select id="operador" class="form-select">
+                                <option id="subtracao" value="1" title="Somar">+</option>
+                                <option id="adicao" value="2" title="Subtrair">-</option>
+                                <option id="multiplicacao" value="3" title="Multiplicar">x</option>
+                                <option id="multiplicacao" value="4" title="Dividir">/</option>
                             </select>
                             <input type="text" class="form-control" id="inputValorDireito" placeholder="EX: 101101">
                         </div>
-                        <input type="button" class="btn btn-primary mt-3 mb-3 col-12" value="Calcular">
+                        <input type="button" class="btn btn-primary mt-3 mb-3 col-12" onclick="calcular()" value="Calcular">
                     </div>
                 </div>
             </div>
 
             <div class="card border-primary mb-3 text-primary shadow rounded" style="width: 500px;">
-                <h4 class="card-header text-center"><strong>Resultado</strong></h4>
+                <h4 class="card-header text-center"><strong>Resultados</strong></h4>
                 <div class="card-body text-center">
-                    <label>110010101</label>
+                    <label>Binário: <span id="resultadoBinario"></span></label>
+                    <br>
+                    <label>Decimal: <span id="resultadoDecimal"></span></label>
                 </div>
             </div>
         </div>
