@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Calculadora - 01000010</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
-<body class="bg-light"> 
+
+<body class="bg-light">
     <div class="container">
         <div class="position-absolute top-50 start-50 translate-middle">
-            <div class="card border-primary mb-3 text-primary shadow rounded" style="width: 500px;">
+            <div class="card border-primary mb-3 text-primary shadow rounded" style="width: 800px;">
                 <h3 class="card-header text-center"><strong>Calculadora</strong></h3>
                 <div class="card-body">
                     <div id="binario">
-                        <h5 class="card-title">Binários</h5>
-                        <small>Digite os valores que deseja calcular</small>
+                        <small>Escolha o tipo, digite o valor e escolha o sinal da operação </small>
                         <div class="input-group">
+                            <select id="tipoEsquerdo" class="form-select">
+                                <option value="2">Bin</option>
+                                <option value="16">Hex</option>
+                            </select>
                             <input type="text" class="form-control" id="inputValorEsquerdo" placeholder="EX: 100101">
                             <select id="operador" class="form-select">
                                 <option id="subtracao" value="1" title="Somar">+</option>
@@ -24,22 +30,41 @@
                                 <option id="multiplicacao" value="4" title="Dividir">/</option>
                             </select>
                             <input type="text" class="form-control" id="inputValorDireito" placeholder="EX: 101101">
+                            <select id="tipoDireito" class="form-select">
+                                <option value="2">Bin</option>
+                                <option value="16">Hex</option>
+                            </select>
                         </div>
-                        <input type="button" class="btn btn-primary mt-3 mb-3 col-12" onclick="calcular()" value="Calcular">
+                        <input type="button" class="btn btn-primary mt-3 mb-3 col-12" onclick="calcular()"
+                            value="Calcular">
                     </div>
                 </div>
             </div>
 
-            <div class="card border-primary mb-3 text-primary shadow rounded" style="width: 500px;">
+            <div class="card border-primary mb-3 text-primary shadow rounded m-auto" style="width: 500px;">
                 <h4 class="card-header text-center"><strong>Resultados</strong></h4>
                 <div class="card-body text-center">
-                    <label>Binário: <span id="resultadoBinario"></span></label>
-                    <br>
-                    <label>Decimal: <span id="resultadoDecimal"></span></label>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Decimal</th>
+                                <th scope="col">Binário</th>
+                                <th scope="col">Hexadecimal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="resultadoBinario"></td>
+                                <td id="resultadoDecimal"></td>
+                                <td id="resultadoHexadecimal"></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 </body>
 <script src="../javascript/script.js"></script>
+
 </html>
