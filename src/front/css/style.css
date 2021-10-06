@@ -1,3 +1,7 @@
 #inputValorEsquerdo, #inputValorDireito {
     width: 150px;
 }
+
+.nav-link:not(.fw-bolder) {
+    line-height: 42px
+}

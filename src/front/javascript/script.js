@@ -39,3 +39,14 @@ function calcular() {
 function converterParaDecimal(valor, tipo) {
     return parseInt(valor, tipo)
 }
+
+function limpar() {
+    document.getElementById("tipoEsquerdo").value = 2;
+    document.getElementById("tipoDireito").value = 2;
+    document.getElementById("inputValorEsquerdo").value = "";
+    document.getElementById("inputValorDireito").value = "";
+    document.getElementById("operador").value = 1;
+    document.getElementById("resultadoDecimal").textContent = ""
+    document.getElementById("resultadoBinario").textContent = ""
+    document.getElementById("resultadoHexadecimal").textContent = ""
+}
