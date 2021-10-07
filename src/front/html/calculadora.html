@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -11,45 +11,47 @@
 </head>
 
 <body class="bg-light">
-    <ul class="nav nav-lg justify-content-center bg-primary shadow">
+    <ul class="nav nav-lg justify-content-center bg-secondary shadow">
         <li class="nav-item">
-          <a class="nav-link btn-primary text-white" href="#">Conversor</a>
+            <a class="nav-link btn-secondary text-white" href="./conversor.html">Conversor</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white fw-bolder fs-3 px-5" href="#">{ 01000010 }</a>
+            <a class="nav-link text-white fw-bolder fs-3 px-5" href="#">{ 01000010 }</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn-primary text-white" href="#">Calculadora</a>
+            <a class="nav-link btn-secondary text-white" href="./calculadora.html">Calculadora</a>
         </li>
-      </ul>
+    </ul>
     <div class="container">
         <div class="position-absolute top-50 start-50 translate-middle">
             <div class="card mb-4 shadow-lg rounded" style="width: 700px;">
-                <h3 class="card-header text-center bg-primary text-white"><strong>Calculadora</strong></h3>
+                <h3 class="card-header text-center bg-secondary text-white"><strong>Calculadora</strong></h3>
                 <div class="card-body">
-                    <div id="binario">
-                        <small>Escolha o tipo, digite o valor e escolha o sinal da operação </small>
-                        <div class="input-group">
+                    <div id="calculadora">
+                        <div class="input-group mb-3">
+                            <small></small>
                             <select id="tipoEsquerdo" class="form-select">
-                                <option value="2">Bin</option>
-                                <option value="16">Hex</option>
+                                <option value="2">Binário</option>
+                                <option value="16">Hexadecimal</option>
                             </select>
                             <input type="text" class="form-control" id="inputValorEsquerdo" placeholder="EX: 100101">
-                            <select id="operador" class="form-select">
-                                <option id="subtracao" value="1" title="Somar">+</option>
-                                <option id="adicao" value="2" title="Subtrair">-</option>
-                                <option id="multiplicacao" value="3" title="Multiplicar">x</option>
-                                <option id="multiplicacao" value="4" title="Dividir">÷</option>
+                        </div>
+                        <select id="operador" class="form-select mb-3 m-auto" style="width: 200px;">
+                            <option id="subtracao" value="1" title="Somar">(+) Somar</option>
+                            <option id="adicao" value="2" title="Subtrair">(-) Subtrair</option>
+                            <option id="multiplicacao" value="3" title="Multiplicar">(x) Multiplicar</option>
+                            <option id="multiplicacao" value="4" title="Dividir">(÷) Dividir</option>
+                        </select>
+                        <div class="input-group mb-3">
+                            <select id="tipoDireito" class="form-select">
+                                <option value="2">Binário</option>
+                                <option value="16">Hexadecimal</option>
                             </select>
                             <input type="text" class="form-control" id="inputValorDireito" placeholder="EX: 101101">
-                            <select id="tipoDireito" class="form-select">
-                                <option value="2">Bin</option>
-                                <option value="16">Hex</option>
-                            </select>
                         </div>
                         <input type="button" class="btn btn-outline-danger mt-3 mb-3 col-2 float-start"
                             onclick="limpar()" value="Limpar">
-                        <input type="button" class="btn btn-primary mt-3 mb-3 col-2 float-end" onclick="calcular()"
+                        <input type="button" class="btn btn-secondary mt-3 mb-3 col-2 float-end" onclick="calcular()"
                             value="Calcular">
                     </div>
                 </div>
@@ -79,6 +81,6 @@
         </div>
     </div>
 </body>
-<script src="../javascript/script.js"></script>
+<script src="../javascript/calculadora.js"></script>
 
 </html>
