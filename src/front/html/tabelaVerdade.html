@@ -30,17 +30,25 @@
                     <div id="tabelaVerdade">
                         <input type="text" id="visor" class="form-control col-md-12" placeholder="Fórmula">
                         <div class="col-md-12 mt-4 mx-auto" style="width: max-content;">
-                            <button class="btn btn-outline-secondary col-auto" value="A" onclick="escreverFormula(this)">A</button>
-                            <button class="btn btn-outline-secondary col-auto" value="B" onclick="escreverFormula(this)">B</button>
-                            <button class="btn btn-outline-secondary col-auto" value="C" onclick="escreverFormula(this)">C</button>
-                            <button class="btn btn-outline-secondary col-auto" value="∧" onclick="escreverFormula(this)" title="E">∧</button>
-                            <button class="btn btn-outline-secondary col-auto" value="∨" onclick="escreverFormula(this)" title="OU">∨</button>
-                            <button class="btn btn-outline-secondary col-auto" value="~" onclick="escreverFormula(this)" title="NÃO">~</button>
-                            <button class="btn btn-outline-secondary col-auto" value="(" onclick="escreverFormula(this)">(</button>
-                            <button class="btn btn-outline-secondary col-auto" value=")" onclick="escreverFormula(this)">)</button>
+                            <button class="btn btn-outline-secondary col-auto" value="A"
+                                onclick="escreverFormula(this)">A</button>
+                            <button class="btn btn-outline-secondary col-auto" value="B"
+                                onclick="escreverFormula(this)">B</button>
+                            <button class="btn btn-outline-secondary col-auto" value="C"
+                                onclick="escreverFormula(this)">C</button>
+                            <button class="btn btn-outline-secondary col-auto" value="∧" onclick="escreverFormula(this)"
+                                title="E">∧</button>
+                            <button class="btn btn-outline-secondary col-auto" value="∨" onclick="escreverFormula(this)"
+                                title="OU">∨</button>
+                            <button class="btn btn-outline-secondary col-auto" value="~" onclick="escreverFormula(this)"
+                                title="NÃO">~</button>
+                            <button class="btn btn-outline-secondary col-auto" value="("
+                                onclick="escreverFormula(this)">(</button>
+                            <button class="btn btn-outline-secondary col-auto" value=")"
+                                onclick="escreverFormula(this)">)</button>
                         </div>
-                        <input type="button" class="btn btn-outline-danger mt-3 col-2 float-start"
-                            onclick="limpar()" value="Limpar">
+                        <input type="button" class="btn btn-outline-danger mt-3 col-2 float-start" onclick="limpar()"
+                            value="Limpar">
                         <input type="button" class="btn btn-secondary mt-3 col-2 float-end" onclick="calcular()"
                             value="Calcular">
                     </div>
@@ -49,7 +57,16 @@
             <div class="card shadow rounded m-auto" style="width: 700px;">
                 <h4 class="card-header text-center"><strong>Resultados</strong></h4>
                 <div class="card-body text-center">
-
+                    <div id="resposta">
+                        <table class="table" style="display: table;">
+                            <thead>
+                                
+                            </thead>
+                            <tbody>
+                                <tr></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

@@ -11,10 +11,13 @@ function calcular() {
     matrixes = [];
     formulaMapeada = [];
     resultado = []
-
+    
     montarMatrix();
     mapearFormula();
     executarFormula();
+    //renderizarResposta();
+
+    console.log(resultado);
 }
 
 function montarMatrix() {
@@ -22,8 +25,7 @@ function montarMatrix() {
 
     if (qtdEntradas === 1) {
         matrixes = [
-            [true, false],
-            [false, false]
+            [true, false]
         ];
     }
     if (qtdEntradas === 2) {
@@ -69,27 +71,57 @@ function mapearFormula() {
 }
 
 function executarFormula() {
-    for (let i = 0; i < matrixes[0].length; i++) {
-        let A;
-        let B;
-        let C;
-        let index = 0;
+    try {
+        for (let i = 0; i < matrixes[0].length; i++) {
+            let A;
+            let B;
+            let C;
+            let index = 0;
+    
+            if (formulaMapeada.includes("A")) {
+                A = matrixes[index][i];
+                index++;
+            }
+            if (formulaMapeada.includes("B")) {
+                B = matrixes[index][i];
+                index++;
+            }
+            if (formulaMapeada.includes("C")) {
+                C = matrixes[index][i];
+                index++;
+            }
+            resultado.push(eval(formulaMapeada))
+        }
+        resultado.toString().replaceAll("true", 1).replaceAll("false", 0);
+    } catch (error) {
+        alert("Formula inválida")
+    }
+}
 
+function renderizarResposta() {
+
+
+    const qtdEntradas = pegarQtdEntradas();
+    const tableResultado = document.getElementById("resposta");
+    const thead = document.getElementsByTagName("thead");
+
+    if (qtdEntradas === 1) {
+        let th = document.getElementsByTagName("th").length > 0 ? document.getElementsByTagName("th") : document.createElement("th");
         if (formulaMapeada.includes("A")) {
-            A = matrixes[index][i];
-            index++;
+            th.textContent = "A"
+            thead[0].appendChild(th)
         }
         if (formulaMapeada.includes("B")) {
-            B = matrixes[index][i];
-            index++;
+            let th = document.createElement("th");
+            th.textContent = "B"
+            thead[0].appendChild(th)
         }
         if (formulaMapeada.includes("C")) {
-            C = matrixes[index][i];
-            index++;
+            let th = document.createElement("th");
+            th.textContent = "C"
+            thead[0].appendChild(th)
         }
-        resultado.push(eval(formulaMapeada))
     }
-    resultado.toString().replaceAll("true", 1).replaceAll("false", 0);
 }
 
 function limpar() {
