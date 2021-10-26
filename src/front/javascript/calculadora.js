@@ -14,8 +14,8 @@ function calcular() {
     const valorEsquerdoDecimal = converterParaDecimal(valorEsquerdo, tipoEsquerdo);
     const valorDireitoDecimal = converterParaDecimal(valorDireito, tipoDireito)
 
+    /* Faz o calculo com os números em decimal */
     let resultado = 0;
-
     switch (operador) {
         case '1':
             resultado = valorEsquerdoDecimal + valorDireitoDecimal;
@@ -31,13 +31,59 @@ function calcular() {
             break;
     }
 
-    document.getElementById("resultadoDecimal").textContent = resultado
-    document.getElementById("resultadoBinario").textContent = resultado.toString(2)
-    document.getElementById("resultadoHexadecimal").textContent = resultado.toString(16)
+    renderizarResultado(resultado)
+
+    /* Mostra na interface o resultado */
+    // document.getElementById("resultadoDecimal").textContent = resultado
+    // document.getElementById("resultadoBinario").textContent = resultado.toString(2)
+    // document.getElementById("resultadoHexadecimal").textContent = resultado.toString(16)
 }
 
 function converterParaDecimal(valor, tipo) {
     return parseInt(valor, tipo)
+}
+
+function renderizarResultado(resultado) {
+    const hasTable = document.getElementsByTagName("table")
+    if (hasTable.length > 0) {
+        hasTable[0].remove()
+    }
+    const tableResposta = document.getElementById("resposta");
+    const table = document.createElement("table");
+    table.className = "table";
+
+    const thead = document.createElement("thead");
+    let trHead = document.createElement("tr");
+    let thDec = document.createElement("th");
+    let thBin = document.createElement("th");
+    let thHex = document.createElement("th");
+    thDec.textContent = "Decimal";
+    thBin.textContent = "Binário";
+    thHex.textContent = "Hexadecimal";
+
+    thead.appendChild(trHead);
+    trHead.appendChild(thDec);
+    trHead.appendChild(thBin);
+    trHead.appendChild(thHex);
+
+    const tbody = document.createElement("tbody");
+    const trBody = document.createElement("tr");
+    const tdDec = document.createElement("td");
+    const tdBin = document.createElement("td");
+    const tdHex = document.createElement("td");
+    tdDec.textContent = resultado;
+    tdBin.textContent = resultado.toString(2);
+    tdHex.textContent = resultado.toString(16);
+
+    tbody.appendChild(trBody);
+    trBody.appendChild(tdDec);
+    trBody.appendChild(tdBin);
+    trBody.appendChild(tdHex);
+
+
+    tableResposta.appendChild(table);
+    table.appendChild(thead);
+    table.appendChild(tbody);
 }
 
 function limpar() {
@@ -46,7 +92,8 @@ function limpar() {
     document.getElementById("inputValorEsquerdo").value = "";
     document.getElementById("inputValorDireito").value = "";
     document.getElementById("operador").value = 1;
-    document.getElementById("resultadoDecimal").textContent = ""
-    document.getElementById("resultadoBinario").textContent = ""
-    document.getElementById("resultadoHexadecimal").textContent = ""
+    const hasTable = document.getElementsByTagName("table")
+    if (hasTable.length > 0) {
+        hasTable[0].remove()
+    }
 }
